@@ -20,6 +20,15 @@ export interface userReqestType {
     submitted: number[]
 }
 
+export interface commentType {
+    by: string
+    id: number
+    kids: number[]
+    parent: number
+    text: string
+    time: number
+    type: "comment"
+}
 export const topStoriesRequest = async (
     selection: string
 ): Promise<allDataReturned> => {

@@ -1,36 +1,27 @@
 import { StarIcon } from "../assets/StarIcon"
-interface Comments {
-    author: string
-    text: string
-}
-interface NewsVariables {
-    title: string
-    author: string
-    comments: Comments[]
-    points: number
-    date: Date
-}
+import { topStoriesType } from "../utils/api"
 
-export function NewsComponent(props: NewsVariables) {
+export function NewsComponent(props: topStoriesType) {
     return (
-        <div className="p-2 text-white bg-black  hover:opacity-90 hover:rounded-2xl transition-all duration-200">
-            <div className="p-2 font-bold text-2xl">{props.title}</div>
+        <div className="p-8 m-2 text-white bg-black  hover:opacity-95 hover:rounded-2xl hover:bg-gray-900 transition-all duration-200">
+            <div className="flex flex-wrap p-2 font-bold text-2xl w-4xl">
+                {props.title}
+            </div>
             <div className="flex gap-1 p-2">
-                <div className="">By: </div>
+                <div>By: </div>
                 <div className="cursor-pointer underline text-amber-500">
-                    {" "}
-                    {props.author}
+                    {props.by}
                 </div>
             </div>
             <div className="flex">
-                <div className="p-2 cursor-pointer underline text-amber-500">
-                    {props.comments.length} comments
+                <div className="p-2 cursor-pointer hover:underline text-amber-500">
+                    {props.descendants} comments
                 </div>
                 <div className="flex gap-1 p-2 items-center">
                     <StarIcon></StarIcon>
-                    <span>{props.points}</span>
+                    <span>{props.score}</span>
                 </div>
-                <div className="p-2">{props.date.toLocaleDateString()}</div>
+                <div className="p-2">{props.time}</div>
             </div>
         </div>
     )
