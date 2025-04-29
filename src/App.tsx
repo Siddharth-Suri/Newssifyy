@@ -1,3 +1,4 @@
+import { HomePage } from "./components/HomePage"
 import { NewsComponent } from "./components/NewsComponent"
 import { TopBar } from "./components/TopBar"
 
@@ -5,6 +6,7 @@ function App() {
     return (
         <div>
             <TopBar></TopBar>
+            <HomePage></HomePage>
             <NewsComponent
                 title="Breaking News"
                 author="John Doe"
