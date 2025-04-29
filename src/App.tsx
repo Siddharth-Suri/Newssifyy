@@ -1,4 +1,3 @@
-import "./App.css"
 import { NewsComponent } from "./components/NewsComponent"
 import { TopBar } from "./components/TopBar"
 
