@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { pageSize } from "../utils/utils"
-import { topStoriesRequest } from "../utils/api"
 import { StoryAtom } from "../state/Story"
 import { useRecoilValue } from "recoil"
 
@@ -11,8 +10,11 @@ export const PaginationComponent = (props) => {
     return (
         <div className="flex p-2 bg-black text-white text-xl">
             <div className="p-2">◀️</div>
-            <div className="p-2">{currentPage}</div>
-            <div className="p-2">{pageSize}</div>
+            <div className="flex p-2">
+                <div className="">{currentPage}/</div>
+                <div className="">{pageSize}</div>
+            </div>
+
             <div className="p-2">▶️</div>
         </div>
     )
