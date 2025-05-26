@@ -9,7 +9,7 @@ export const LandingPage = () => {
                 <TopBar></TopBar>
             </div>
             <div className="flex justify-center">
-                <div className=" hover:opacity-80">
+                <div className="">
                     <HomePage></HomePage>
                 </div>
             </div>

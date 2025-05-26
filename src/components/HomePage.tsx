@@ -1,15 +1,18 @@
 import { useEffect } from "react"
 import { requestById, topStoriesRequest } from "../utils/api"
 import { NewsComponent } from "./NewsComponent"
-import { lower, upper } from "../utils/utils"
+
 import { StoryByIdAtom } from "../state/StoryById"
 import { StoryAtom } from "../state/Story"
 import { SelectionType } from "../state/SelectionType"
 import { useRecoilState } from "recoil"
+import { LowerPageNumberAtom, UpperPageNumberAtom } from "../state/PageNumber"
 export const HomePage = () => {
     const [allStories, setAllStories] = useRecoilState(StoryAtom)
     const [storiesById, setStoriesById] = useRecoilState(StoryByIdAtom)
     const [typeOfSelection, setTypeOfSelection] = useRecoilState(SelectionType)
+    const [currentLower, setCurrentLower] = useRecoilState(LowerPageNumberAtom)
+    const [currentUpper, setCurrentUpper] = useRecoilState(UpperPageNumberAtom)
 
     //this is done because useEffect itself cannot be async therefore
     //we create a function to be asnyc which can provide us the data
@@ -30,7 +33,7 @@ export const HomePage = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const slicedData = allStories.slice(lower, upper)
+                const slicedData = allStories.slice(currentLower, currentUpper)
                 const stories = await Promise.all(
                     slicedData.map((id) => {
                         return requestById(id)
@@ -42,7 +45,7 @@ export const HomePage = () => {
             }
         }
         fetchData()
-    }, [allStories])
+    }, [allStories, currentLower, currentUpper])
 
     return (
         <div>
