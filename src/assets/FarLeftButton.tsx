@@ -1,6 +1,6 @@
-export default function LeftButton() {
+export default function FarLeftButton(props: any): any {
     return (
-        <div>
+        <button {...props}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -12,9 +12,9 @@ export default function LeftButton() {
                 <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M15.75 19.5 8.25 12l7.5-7.5"
+                    d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5"
                 />
             </svg>
-        </div>
+        </button>
     )
 }
