@@ -13,7 +13,7 @@ export const LandingPage = () => {
                     <HomePage></HomePage>
                 </div>
             </div>
-            <div>
+            <div className="flex justify-center ">
                 <PaginationComponent></PaginationComponent>
             </div>
         </div>
