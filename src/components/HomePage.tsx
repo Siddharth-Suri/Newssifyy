@@ -1,28 +1,32 @@
 import { useEffect } from "react"
 import { requestById, topStoriesRequest } from "../utils/api"
 import { NewsComponent } from "./NewsComponent"
+import { Skeleton } from "./Skeleton"
 
+import { useRecoilState } from "recoil"
 import { StoryByIdAtom } from "../state/StoryById"
 import { StoryAtom } from "../state/Story"
 import { SelectionType } from "../state/SelectionType"
-import { useRecoilState } from "recoil"
 import { LowerPageNumberAtom, UpperPageNumberAtom } from "../state/PageNumber"
-export const HomePage = () => {
+import { Dispatch, SetStateAction } from "react"
+interface HomePageProps {
+    loading: boolean
+    setLoading: Dispatch<SetStateAction<boolean>>
+}
+
+export const HomePage = ({ loading, setLoading }: HomePageProps) => {
     const [allStories, setAllStories] = useRecoilState(StoryAtom)
     const [storiesById, setStoriesById] = useRecoilState(StoryByIdAtom)
-    const [typeOfSelection, setTypeOfSelection] = useRecoilState(SelectionType)
-    const [currentLower, setCurrentLower] = useRecoilState(LowerPageNumberAtom)
-    const [currentUpper, setCurrentUpper] = useRecoilState(UpperPageNumberAtom)
-
-    //this is done because useEffect itself cannot be async therefore
-    //we create a function to be asnyc which can provide us the data
+    const [typeOfSelection] = useRecoilState(SelectionType)
+    const [currentLower] = useRecoilState(LowerPageNumberAtom)
+    const [currentUpper] = useRecoilState(UpperPageNumberAtom)
 
     useEffect(() => {
         const fetchData = async () => {
             try {
+                setLoading(true)
                 const data = await topStoriesRequest(typeOfSelection)
                 setAllStories(data)
-                console.log(data)
             } catch (err) {
                 console.log("There was an error")
             }
@@ -33,25 +37,30 @@ export const HomePage = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
+                setLoading(true)
                 const slicedData = allStories.slice(currentLower, currentUpper)
                 const stories = await Promise.all(
-                    slicedData.map((id) => {
-                        return requestById(id)
-                    })
+                    slicedData.map((id) => requestById(id))
                 )
                 setStoriesById(stories)
             } catch {
                 console.log("Data couldn't be mapped")
+            } finally {
+                setLoading(false)
             }
         }
         fetchData()
     }, [allStories, currentLower, currentUpper])
 
     return (
-        <div>
-            {storiesById.map((story) => {
-                return <NewsComponent key={story.id} {...story}></NewsComponent>
-            })}
+        <div className="min-h-screen">
+            {loading ? (
+                <Skeleton />
+            ) : (
+                storiesById.map((story) => (
+                    <NewsComponent key={story.id} {...story} />
+                ))
+            )}
         </div>
     )
 }

@@ -3,7 +3,7 @@ import { topStoriesType } from "../utils/api"
 
 export function NewsComponent(props: topStoriesType) {
     return (
-        <div className="p-8 m-2 text-white bg-black  hover:opacity-95 hover:rounded-2xl hover:bg-gray-900 transition-all duration-200">
+        <div className="p-4 m-2 text-white bg-black  hover:opacity-95 hover:rounded-2xl hover:bg-neutral-900 hover:pt-6  transition-all duration-200">
             <div className="flex flex-wrap p-2 font-bold text-2xl w-4xl">
                 {props.title}
             </div>

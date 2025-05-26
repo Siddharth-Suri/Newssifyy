@@ -1,6 +1,9 @@
 export default function LeftButton(props: any): any {
     return (
-        <button {...props}>
+        <button
+            {...props}
+            className="hover:cursor-pointer hover:text-amber-400"
+        >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

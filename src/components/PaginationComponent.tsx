@@ -1,5 +1,4 @@
-import { pageSize } from "../utils/utils"
-import { StoryAtom } from "../state/Story"
+import { sizeofProductsPagedSelector } from "../state/Story"
 import { useRecoilState, useRecoilValue } from "recoil"
 import LeftButton from "../assets/LeftButton.tsx"
 import RightButton from "../assets/RightButton.tsx"
@@ -14,9 +13,9 @@ export const PaginationComponent = () => {
     const [currentLower, setCurrentLower] = useRecoilState(LowerPageNumberAtom)
     const [currentUpper, setCurrentUpper] = useRecoilState(UpperPageNumberAtom)
 
-    const totalProducts = useRecoilValue(StoryAtom)
-    const sizeOfTotalProducts = totalProducts.length
-    const sizeofProductsPaged = sizeOfTotalProducts / pageSize
+    // const totalProducts = useRecoilValue(StoryAtom)
+    // const sizeOfTotalProducts = totalProducts.length
+    const sizeofProductsPaged = useRecoilValue(sizeofProductsPagedSelector)
     return (
         <div className="flex p-2 bg-black text-white text-xl">
             <div
