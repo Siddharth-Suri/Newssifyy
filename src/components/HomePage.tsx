@@ -7,13 +7,13 @@ import { StoryAtom } from "../state/Story"
 import { SelectionType } from "../state/SelectionType"
 import { LowerPageNumberAtom, UpperPageNumberAtom } from "../state/PageNumber"
 import { Dispatch, SetStateAction } from "react"
-import { Skeleton } from "./Skeleton"
+
 interface HomePageProps {
     loading: boolean
     setLoading: Dispatch<SetStateAction<boolean>>
 }
 
-export const HomePage = ({ loading, setLoading }: HomePageProps) => {
+export const HomePage = ({ setLoading }: HomePageProps) => {
     const [allStories, setAllStories] = useRecoilState(StoryAtom)
     const [storiesById, setStoriesById] = useRecoilState(StoryByIdAtom)
     const [typeOfSelection] = useRecoilState(SelectionType)
