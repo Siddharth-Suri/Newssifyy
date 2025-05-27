@@ -1,14 +1,13 @@
 import { useEffect } from "react"
 import { requestById, topStoriesRequest } from "../utils/api"
 import { NewsComponent } from "./NewsComponent"
-import { Skeleton } from "./Skeleton"
-
 import { useRecoilState } from "recoil"
 import { StoryByIdAtom } from "../state/StoryById"
 import { StoryAtom } from "../state/Story"
 import { SelectionType } from "../state/SelectionType"
 import { LowerPageNumberAtom, UpperPageNumberAtom } from "../state/PageNumber"
 import { Dispatch, SetStateAction } from "react"
+import { Skeleton } from "./Skeleton"
 interface HomePageProps {
     loading: boolean
     setLoading: Dispatch<SetStateAction<boolean>>
@@ -53,14 +52,17 @@ export const HomePage = ({ loading, setLoading }: HomePageProps) => {
     }, [allStories, currentLower, currentUpper])
 
     return (
-        <div className="min-h-screen">
-            {loading ? (
-                <Skeleton />
+        <div className="min-h-screen justify-center">
+            {/* {loading ? (
+                <Skeleton></Skeleton>
             ) : (
                 storiesById.map((story) => (
                     <NewsComponent key={story.id} {...story} />
                 ))
-            )}
+            )} */}
+            {storiesById.map((story) => (
+                <NewsComponent key={story.id} {...story} />
+            ))}
         </div>
     )
 }
