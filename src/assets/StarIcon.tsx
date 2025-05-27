@@ -8,7 +8,7 @@ export const StarIcon = () => {
                 stroke-width="1.5"
                 stroke="currentColor"
                 //@ts-ignore
-                class="size-5"
+                class="size-4"
             >
                 <path
                     stroke-linecap="round"
