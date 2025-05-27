@@ -13,9 +13,14 @@ export function TopBar() {
 
                         <div className="">sifyy</div>
                     </div>
-                    <div className="text-amber-500 p-2 text-center cursor-pointer item-center underline">
-                        github
-                    </div>
+                    <a
+                        href="https://github.com/Siddharth-Suri/The-News"
+                        target="_blank"
+                    >
+                        <div className="text-amber-500 p-2 text-center cursor-pointer item-center underline">
+                            github
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
