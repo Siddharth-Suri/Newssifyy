@@ -1,8 +1,10 @@
 export default function FarLeftButton(props: any): any {
     return (
         <button
-            {...props}
-            className="hover:cursor-pointer hover:text-amber-400"
+            disabled={props.disabled}
+            className={`hover:cursor-pointer ${
+                props.disabled ? "text-gray-500" : "hover:text-amber-400"
+            }`}
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"

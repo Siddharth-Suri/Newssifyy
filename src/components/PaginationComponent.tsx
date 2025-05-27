@@ -38,7 +38,7 @@ export const PaginationComponent = () => {
             </div>
             <div className="flex p-2">
                 <div className="pl-2 pr-2 text-amber-400 font-bold">
-                    {currentLower / 10}
+                    {currentLower / 10 + 1}
                 </div>
                 <div className="pl-2 pr-2 font-bold">/</div>
                 <div className="pl-2 pr-2 font-bold">{sizeofProductsPaged}</div>
