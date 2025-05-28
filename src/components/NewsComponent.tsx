@@ -18,15 +18,20 @@ export function NewsComponent(props: topStoriesType) {
                 </div>
             </div>
             <div className="flex text-sm text-gray-400 ">
-                <div className="flex p-2 bg-opacity-80 cursor-pointer hover:underline text-amber-500 justify-center items-center gap-1 border-r-2 border-neutral-800 ">
+                <div className="flex pt-2 pl-2 pb-2 bg-opacity-80 cursor-pointer hover:underline text-amber-500 justify-center items-center gap-1  ">
                     <span className="">
                         <CommentIcon></CommentIcon>
                     </span>
-                    {props.descendants} comments
+                    {props.descendants}
+                    <div className="border-r-2 pr-2 border-neutral-700">
+                        comments
+                    </div>
                 </div>
-                <div className="flex gap-1 p-2 items-center text-gray-400 border-r-2 border-neutral-800">
+                <div className="flex gap-1 pt-2 pl-2 pb-2 items-center text-gray-400 ">
                     <StarIcon></StarIcon>
-                    <span>{props.score}</span>
+                    <span className="pr-2 border-r-2 border-neutral-700">
+                        {props.score}
+                    </span>
                 </div>
                 <div className="p-2 text-gray-400">
                     {new Date(props.time * 1000).toLocaleDateString()}
