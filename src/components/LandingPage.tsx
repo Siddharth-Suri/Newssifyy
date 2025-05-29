@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { HomePage } from "./HomePage"
 import { PaginationComponent } from "./PaginationComponent"
-import { TopBar } from "./TopBar"
 
 export const LandingPage = () => {
     const [isLoading, setLoading] = useState(true)

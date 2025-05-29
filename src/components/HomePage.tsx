@@ -53,13 +53,6 @@ export const HomePage = ({ setLoading }: HomePageProps) => {
 
     return (
         <div className="min-h-screen justify-center">
-            {/* {loading ? (
-                <Skeleton></Skeleton>
-            ) : (
-                storiesById.map((story) => (
-                    <NewsComponent key={story.id} {...story} />
-                ))
-            )} */}
             {storiesById.map((story) => (
                 <NewsComponent key={story.id} {...story} />
             ))}
