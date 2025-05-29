@@ -13,7 +13,6 @@ export function TopBar() {
                         className="flex  text-2xl text-amber-500  font-medium text-center item-center cursor-pointer"
                         onClick={() => {
                             NavigateToHome()
-                            window.location.reload()
                         }}
                     >
                         <div className="font-light text-white">News</div>
