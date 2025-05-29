@@ -8,8 +8,6 @@ export const LandingPage = () => {
 
     return (
         <div className="bg-black">
-            <TopBar />
-
             <div className="flex justify-center">
                 <HomePage loading={isLoading} setLoading={setLoading} />
             </div>

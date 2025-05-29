@@ -45,8 +45,7 @@ export const requestById = async (id: number): Promise<topStoriesType> => {
     return res.data
 }
 
-export const requestByUser = async (): Promise<userReqestType> => {
-    const id = "jl"
+export const requestByUser = async (id: string): Promise<userReqestType> => {
     const res = await axios.get<userReqestType>(
         `https://hacker-news.firebaseio.com/v0/user/${id}.json?print=pretty`
     )

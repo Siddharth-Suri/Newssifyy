@@ -1,7 +1,14 @@
 import { StarIcon } from "../assets/StarIcon"
 import { topStoriesType } from "../utils/api"
 import { CommentIcon } from "../assets/CommentIcon"
+import { useNavigate } from "react-router-dom"
+import { useEffect } from "react"
 export function NewsComponent(props: topStoriesType) {
+    const navigate = useNavigate()
+    function navigateToUser(id: string) {
+        navigate(`/user/${id}`)
+    }
+
     return (
         <div className="p-2 w-3xl border-b-2 mb-2 border-neutral-800 container mx-auto text-neutral-100 bg-black  hover:opacity-95 hover:rounded-2xl hover:bg-neutral-900 hover:pt-4  transition-all duration-200">
             <div className="flex flex-wrap p-2 font-bold text-lg ">
@@ -13,7 +20,12 @@ export function NewsComponent(props: topStoriesType) {
             </div>
             <div className="flex text-sm gap-1 p-2 text-gray-400">
                 <div>by: </div>
-                <div className="cursor-pointer underline text-amber-500">
+                <div
+                    className="cursor-pointer underline text-amber-500"
+                    onClick={() => {
+                        navigateToUser(props.by)
+                    }}
+                >
                     {props.by}
                 </div>
             </div>
