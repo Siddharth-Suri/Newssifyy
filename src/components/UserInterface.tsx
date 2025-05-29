@@ -26,8 +26,8 @@ export const UserInterface = () => {
     }
 
     return (
-        <div className="flex justify-center w-4xl">
-            <div className="flex-col  ">
+        <div className="flex  justify-center ">
+            <div className=" max-w-2xl   ">
                 <div className="flex p-1 pt-3 pb-3  text-amber-400 text-xl">
                     {id}
                     <span>'s Profile</span>
@@ -42,10 +42,12 @@ export const UserInterface = () => {
                     Karma-
                     <span className="text-white">{userData.karma}</span>
                 </div>
-                <div className="flex gap-1 p-0.5 text-gray-400">
+                <div className="flex gap-1 p-0.5 flex-col text-gray-400">
                     About-
                     {userData.about ? (
-                        <div className="white">{userData.about}</div>
+                        <div className="container text-white break-words">
+                            {userData.about}
+                        </div>
                     ) : (
                         <div className="text-amber-600">Null</div>
                     )}
