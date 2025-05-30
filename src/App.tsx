@@ -13,6 +13,10 @@ function App() {
                     path="/user/:id"
                     element={<UserInterface></UserInterface>}
                 ></Route>
+                <Route
+                    path="/story/:id"
+                    element={<UserInterface></UserInterface>}
+                ></Route>
             </Routes>
         </RecoilRoot>
     )
