@@ -1,6 +1,10 @@
 import { useNavigate } from "react-router-dom"
+import { LowerPageNumberAtom, UpperPageNumberAtom } from "../state/PageNumber"
+import { useSetRecoilState } from "recoil"
 
 export function TopBar() {
+    const setCurrentLower = useSetRecoilState(LowerPageNumberAtom)
+    const setCurrentUpper = useSetRecoilState(UpperPageNumberAtom)
     const navigate = useNavigate()
     const NavigateToHome = () => {
         navigate("/")
@@ -12,6 +16,8 @@ export function TopBar() {
                     <div
                         className="flex  text-2xl text-amber-500  font-medium text-center item-center cursor-pointer"
                         onClick={() => {
+                            setCurrentLower(0)
+                            setCurrentUpper(10)
                             NavigateToHome()
                         }}
                     >
