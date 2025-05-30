@@ -70,8 +70,8 @@ export const CommentComponent = () => {
                     </a>
                 </div>
 
-                <div className="p-2 pt-4 pb-4 text-xl font-normal">
-                    Comments
+                <div className="p-2 pt-4 pb-4 text-xl font-normal text-neutral-300">
+                    Comments ({commentStory.descendants}) :
                 </div>
             </div>
         </div>
