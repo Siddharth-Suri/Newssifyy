@@ -3,6 +3,7 @@ import { LandingPage } from "./components/LandingPage"
 import { Route, Routes } from "react-router-dom"
 import { TopBar } from "./components/TopBar"
 import { UserInterface } from "./components/UserInterface"
+import { CommentComponent } from "./components/CommentComponent"
 function App() {
     return (
         <RecoilRoot>
@@ -15,7 +16,7 @@ function App() {
                 ></Route>
                 <Route
                     path="/story/:id"
-                    element={<UserInterface></UserInterface>}
+                    element={<CommentComponent></CommentComponent>}
                 ></Route>
             </Routes>
         </RecoilRoot>

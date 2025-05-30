@@ -3,7 +3,7 @@ export interface topStoriesType {
     id: number
     title: string
     by: string
-    text?: string
+    text: string
     url?: string
     time: number
     score: number

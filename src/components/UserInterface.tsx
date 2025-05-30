@@ -22,11 +22,15 @@ export const UserInterface = () => {
         console.log(id)
 
         console.log(userData)
-        return <div className="flex justify-center text-xl">Loading...</div>
+        return (
+            <div className="flex justify-center text-xl text-neutral-400">
+                Loading...
+            </div>
+        )
     }
 
     return (
-        <div className="flex  justify-center ">
+        <div className="flex  justify-center  ">
             <div className=" max-w-2xl   ">
                 <div className="flex p-1 pt-3 pb-3  text-amber-400 text-xl">
                     {id}

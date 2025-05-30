@@ -2,10 +2,14 @@ import { StarIcon } from "../assets/StarIcon"
 import { topStoriesType } from "../utils/api"
 import { CommentIcon } from "../assets/CommentIcon"
 import { useNavigate } from "react-router-dom"
+
 export function NewsComponent(props: topStoriesType) {
     const navigate = useNavigate()
     function navigateToUser(id: string) {
         navigate(`/user/${id}`)
+    }
+    function navigateToComments(id: number) {
+        navigate(`/story/${id}`)
     }
 
     return (
@@ -33,7 +37,12 @@ export function NewsComponent(props: topStoriesType) {
                     <span className="pr-1">
                         <CommentIcon></CommentIcon>
                     </span>
-                    <div className="border-r-2 pr-2 border-neutral-700">
+                    <div
+                        className="border-r-2 pr-2 border-neutral-700"
+                        onClick={() => {
+                            navigateToComments(props.id)
+                        }}
+                    >
                         {props.descendants} comments
                     </div>
                 </div>
