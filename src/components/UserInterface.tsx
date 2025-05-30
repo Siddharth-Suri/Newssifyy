@@ -1,7 +1,7 @@
 import { requestByUser, userReqestType } from "../utils/api"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
-
+import parse from "html-react-parser"
 export const UserInterface = () => {
     const { id } = useParams<{ id: string }>()
     const [userData, setUserData] = useState<userReqestType | null>(null)
@@ -46,7 +46,7 @@ export const UserInterface = () => {
                     About-
                     {userData.about ? (
                         <div className="container text-white break-words">
-                            {userData.about}
+                            {parse(userData.about)}
                         </div>
                     ) : (
                         <div className="text-amber-600">Null</div>

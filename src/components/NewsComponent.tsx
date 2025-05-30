@@ -2,7 +2,6 @@ import { StarIcon } from "../assets/StarIcon"
 import { topStoriesType } from "../utils/api"
 import { CommentIcon } from "../assets/CommentIcon"
 import { useNavigate } from "react-router-dom"
-import { CommentComponent } from "./CommentComponent"
 export function NewsComponent(props: topStoriesType) {
     const navigate = useNavigate()
     function navigateToUser(id: string) {
