@@ -15,7 +15,7 @@ export function NewsComponent(props: topStoriesType) {
     return (
         <div className="p-2  sm:xlmd:2xl lg:w-3xl border-b-2 mb-2 border-neutral-800 container mx-auto text-neutral-100 bg-black  hover:opacity-95 hover:rounded-2xl hover:bg-neutral-900 hover:pt-4  transition-all duration-200">
             <div className="flex flex-wrap p-2 font-bold text-lg ">
-                <div className="hover:text-blue-300  hover:underline">
+                <div className="hover:text-blue-400 hover:underline">
                     <a href={props.url} target="_blank" className="">
                         {props.title}
                     </a>

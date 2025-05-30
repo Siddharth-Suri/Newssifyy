@@ -3,7 +3,7 @@ export default function RightButton(props: any): any {
         <button
             disabled={props.disabled}
             className={`hover:cursor-pointer ${
-                props.disabled ? "text-gray-500" : "hover:text-amber-400"
+                props.disabled ? "text-gray-500" : "hover:text-blue-500"
             }`}
         >
             <svg

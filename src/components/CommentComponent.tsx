@@ -60,7 +60,7 @@ export const CommentComponent = () => {
                     </div>
                 </div>
 
-                <div className="p-2 text-yellow-500">
+                <div className="p-2 text-yellow-600">
                     <a
                         href={commentStory.url}
                         target="_blank "
