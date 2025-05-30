@@ -37,7 +37,7 @@ export const PaginationComponent = () => {
                 <LeftButton disabled={currentLower === 0}></LeftButton>
             </div>
             <div className="flex p-2">
-                <div className="pl-2 pr-2 text-amber-400 font-bold">
+                <div className="pl-2 pr-2 text-yellow-300 font-bold">
                     {currentLower / 10 + 1}
                 </div>
                 <div className="pl-2 pr-2 font-bold">/</div>

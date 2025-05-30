@@ -32,7 +32,7 @@ export const UserInterface = () => {
     return (
         <div className="flex  justify-center  ">
             <div className=" max-w-2xl   ">
-                <div className="flex p-1 pt-3 pb-3  text-amber-400 text-xl">
+                <div className="flex p-1 pt-3 pb-3  text-blue-400 text-xl">
                     {id}
                     <span>'s Profile</span>
                 </div>

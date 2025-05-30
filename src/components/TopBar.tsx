@@ -14,7 +14,7 @@ export function TopBar() {
             <div className="w-3xl">
                 <div className="flex p-2 justify-between items-center ">
                     <div
-                        className="flex  text-2xl text-amber-500  font-medium text-center item-center cursor-pointer"
+                        className="flex  text-2xl text-blue-500   font-medium text-center item-center cursor-pointer"
                         onClick={() => {
                             setCurrentLower(0)
                             setCurrentUpper(10)
@@ -29,7 +29,7 @@ export function TopBar() {
                         href="https://github.com/Siddharth-Suri/The-News"
                         target="_blank"
                     >
-                        <div className="text-amber-500 p-2 text-center cursor-pointer item-center underline">
+                        <div className="text-blue-500  p-2 text-center cursor-pointer item-center underline">
                             github
                         </div>
                     </a>

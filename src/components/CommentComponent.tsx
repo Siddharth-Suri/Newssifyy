@@ -41,7 +41,7 @@ export const CommentComponent = () => {
                     <div className="flex items-center pr-2 border-r-2 border-neutral-700 text-neutral-400">
                         by:
                         <span
-                            className="pl-1 text-amber-500 cursor-pointer hover:underline"
+                            className="pl-1 text-blue-400 cursor-pointer hover:underline"
                             onClick={() => {
                                 navigateToUser(commentStory.by)
                             }}
@@ -60,7 +60,7 @@ export const CommentComponent = () => {
                     </div>
                 </div>
 
-                <div className="p-2  text-amber-500">
+                <div className="p-2 text-yellow-500">
                     <a
                         href={commentStory.url}
                         target="_blank "
