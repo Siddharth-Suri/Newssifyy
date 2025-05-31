@@ -1,10 +1,9 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { requestById, topStoriesType } from "../utils/api"
-// import parse from "html-react-parser"
 import { useNavigate } from "react-router-dom"
 import { StarIcon } from "../assets/StarIcon"
-// props: topStoriesType to be added as props
+import { ChildCommentComponent } from "./ChildCommentComponent"
 export const CommentComponent = () => {
     const navigate = useNavigate()
     function navigateToUser(id: string) {
@@ -60,7 +59,7 @@ export const CommentComponent = () => {
                     </div>
                 </div>
 
-                <div className="p-2 text-yellow-600">
+                <div className="p-2 text-blue-300">
                     <a
                         href={commentStory.url}
                         target="_blank "
@@ -73,12 +72,13 @@ export const CommentComponent = () => {
                 <div className="p-2 pt-4 pb-4 text-xl font-normal text-neutral-300">
                     Comments ({commentStory.descendants}) :
                 </div>
+                <div>
+                    <ChildCommentComponent
+                        key={id}
+                        id={commentStory.id}
+                    ></ChildCommentComponent>
+                </div>
             </div>
         </div>
     )
 }
-// {commentStory.text ? (
-//                         <div>{parse(commentStory.text || "")}</div>
-//                     ) : (
-//                         <div>Null</div>
-//                     )}
