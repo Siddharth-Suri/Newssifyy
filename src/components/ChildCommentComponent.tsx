@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { requestById, topStoriesType } from "../utils/api"
 import parse from "html-react-parser"
 import { useNavigate } from "react-router-dom"
+
 export const ChildCommentComponent = ({ id }: { id: number }) => {
     const [childComment, setChildComment] = useState<topStoriesType | null>(
         null
@@ -15,7 +16,6 @@ export const ChildCommentComponent = ({ id }: { id: number }) => {
     useEffect(() => {
         const fetchData = async () => {
             const data = await requestById(id)
-            console.log(`Fetched comment for id ${id}:`, data)
             if (data) {
                 setChildComment(data)
             }

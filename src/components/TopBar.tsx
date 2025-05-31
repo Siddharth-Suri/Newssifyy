@@ -5,10 +5,13 @@ import { useSetRecoilState } from "recoil"
 export function TopBar() {
     const setCurrentLower = useSetRecoilState(LowerPageNumberAtom)
     const setCurrentUpper = useSetRecoilState(UpperPageNumberAtom)
+
     const navigate = useNavigate()
+
     const NavigateToHome = () => {
         navigate("/")
     }
+
     return (
         <div className="flex justify-center font-bold items-center  p-4">
             <div className="w-3xl">

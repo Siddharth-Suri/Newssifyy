@@ -5,9 +5,11 @@ import { useNavigate } from "react-router-dom"
 
 export function NewsComponent(props: topStoriesType) {
     const navigate = useNavigate()
+
     function navigateToUser(id: string) {
         navigate(`/user/${id}`)
     }
+
     function navigateToComments(id: number) {
         navigate(`/story/${id}`)
     }

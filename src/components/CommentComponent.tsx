@@ -4,11 +4,13 @@ import { requestById, topStoriesType } from "../utils/api"
 import { useNavigate } from "react-router-dom"
 import { StarIcon } from "../assets/StarIcon"
 import { ChildCommentComponent } from "./ChildCommentComponent"
+
 export const CommentComponent = () => {
     const navigate = useNavigate()
     function navigateToUser(id: string) {
         navigate(`/user/${id}`)
     }
+
     const { id } = useParams()
     const [commentStory, setCommentStory] = useState<topStoriesType | null>(
         null
@@ -30,6 +32,7 @@ export const CommentComponent = () => {
             </div>
         )
     }
+
     return (
         <div className="p-1 sm:xlmd:2xl lg:w-3xl  mb-2  pt-4 pb-4 container mx-auto text-neutral-100 bg-black item-center">
             <div>

@@ -12,10 +12,8 @@ import FarRightButton from "../assets/FarRightButton.tsx"
 export const PaginationComponent = () => {
     const [currentLower, setCurrentLower] = useRecoilState(LowerPageNumberAtom)
     const [currentUpper, setCurrentUpper] = useRecoilState(UpperPageNumberAtom)
-
-    // const totalProducts = useRecoilValue(StoryAtom)
-    // const sizeOfTotalProducts = totalProducts.length
     const sizeofProductsPaged = useRecoilValue(sizeofProductsPagedSelector)
+
     return (
         <div className="flex p-2 bg-black text-white text-xl">
             <div
