@@ -73,10 +73,10 @@ export const CommentComponent = () => {
                     Comments ({commentStory.descendants}) :
                 </div>
                 <div>
-                    <ChildCommentComponent
-                        key={id}
-                        id={commentStory.id}
-                    ></ChildCommentComponent>
+                    {Array.isArray(commentStory.kids) &&
+                        commentStory.kids.map((kidId) => (
+                            <ChildCommentComponent key={kidId} id={kidId} />
+                        ))}
                 </div>
             </div>
         </div>

@@ -15,6 +15,7 @@ export const ChildCommentComponent = ({ id }: { id: number }) => {
     useEffect(() => {
         const fetchData = async () => {
             const data = await requestById(id)
+            console.log(`Fetched comment for id ${id}:`, data)
             if (data) {
                 setChildComment(data)
             }
