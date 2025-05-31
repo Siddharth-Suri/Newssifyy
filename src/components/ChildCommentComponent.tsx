@@ -26,7 +26,7 @@ export const ChildCommentComponent = ({ id }: { id: number }) => {
         return <div className="ml-4 text-neutral-500">Loading...</div>
 
     return (
-        <div className="ml-4 border-l border-neutral-700 pl-4 py-2">
+        <div className="ml-4 w-full max-w-3xl border-l container break-words border-neutral-700 pl-4 py-2">
             {childComment.text ? (
                 <div className="pb-2">
                     <div className="p-1 items-center text-sm text-neutral-400 flex gap-2">
@@ -44,7 +44,7 @@ export const ChildCommentComponent = ({ id }: { id: number }) => {
                             ).toLocaleDateString()}
                         </span>
                     </div>
-                    <div className="text-neutral-200">
+                    <div className="text-neutral-200 w-full max-w-full break-words whitespace-pre-wrap overflow-auto">
                         {parse(childComment.text)}
                     </div>
                 </div>
