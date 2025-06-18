@@ -11,6 +11,12 @@ A React based lightweight web-app that fetches and displays Hacker News stories,
 -   Modern UI with TailwindCSS and Responsiveness.
 -   Uses TypeScript for type safety.
 
+## Screenshots
+
+![screenshot](/src/assets/Readme1.png)
+![screenshot2](/src/assets/Readme2.png)
+![screenshot3](/src/assets/Readme3.png)
+
 ## Technologies Used
 
 -   ReactJs
